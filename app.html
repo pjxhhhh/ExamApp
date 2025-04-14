@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考研助手 - 应用中心</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <div class="nav-item active" data-page="topic-analysis">题目解析</div>
+            <div class="nav-item" data-page="writing-platform">作文工作台</div>
+            <div class="nav-item" data-page="my-notes">我的笔记</div>
+        </nav>
+
+        <!-- 题目解析区域 -->
+        <main class="main-content">
+            <!-- 顶部欢迎语 -->
+            
+            <!-- 题目解析页面 -->
+            <div id="topic-analysis" class="page">
+                <!-- 标签页导航 -->
+                <div class="tabs">
+                    <div class="tab active" data-tab="topic-reading">题目导读</div>
+                    <div class="tab" data-tab="outline-assistant">大纲助手</div>
+                </div>
+
+                <!-- 标签页内容 -->
+                <div class="tab-content">
+                    <!-- 题目导读内容 -->
+                    <div id="topic-reading" class="tab-pane active">
+                        <div class="content-area">
+                            <h2>题目导读：居民对自身身体素质的关注</h2>
+                            <div class="topic-content">
+                                <h3>观点推荐：</h3>
+                                <div class="point">观点1：你可以按照"描述图片与图表简要介绍图中的场景，包括公园的环境、锻炼的人们";</div>
+                                <div class="point">观点2：描述柱状图的内容，指出公园数量在2020年至2022年的增长趋势，解释图表的意图分析图表数据所反映的社会现象；</div>
+                                <div class="point">观点3：探讨这种变化给当地居民生活带来的积极影响，如提高居民的健康水平、增强社区凝聚力等。</div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-refresh">重新优化</button>
+                                <button class="btn-next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 大纲助手内容 -->
+                    <div id="outline-assistant" class="tab-pane">
+                        <div class="content-area">
+                            <!-- 对话区域 -->
+                            <div class="chat-container">
+                                <div class="chat-messages">
+                                    <div class="message agent">
+                                        <div class="avatar">AI</div>
+                                        <div class="message-content">
+                                            你好！我是你的大纲助手。让我们一起来完成大纲创作。根据题目导读的分析，你觉得这篇文章的主要论点应该是什么？
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 确认按钮 -->
+                            <div class="outline-actions">
+                                <button class="btn-confirm">确认生成大纲</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部输入区域 -->
+                <div class="input-section">
+                    <div class="topic-selector">
+                        <label>题型选择：</label>
+                        <select class="essay-type">
+                            <option value="小作文">小作文</option>
+                            <option value="大作文">大作文</option>
+                        </select>
+                        <select class="essay-topic">
+                            <option value="2003-作文名称-作文类型">2003-作文名称-作文类型</option>
+                            <option value="2004-作文名称-作文类型">2004-作文名称-作文类型</option>
+                            <option value="2005-作文名称-作文类型">2005-作文名称-作文类型</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <textarea placeholder="请输入你的作文题目，shift+enter换行"></textarea>
+                        <div class="input-actions">
+                            <button class="btn-image" title="插入图片">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                            </button>
+                            <button class="btn-send" title="发送">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"/>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 作文工作台页面 -->
+            <div id="writing-platform" class="page">
+                <!-- 顶部功能按钮区 -->
+                <div class="platform-header">
+                    <div class="platform-actions">
+                        <button class="btn-score">AI打分</button>
+                        <button class="btn-save">保存作文</button>
+                    </div>
+                </div>
+
+                <!-- 三栏写作区域 -->
+                <div class="writing-area">
+                    <!-- 左侧大纲列 -->
+                    <div class="outline-column">
+                        <div class="outline-content">
+                            <div class="outline-section">
+                                <h4>开头段</h4>
+                                <p>引入当代居民对身体素质日益关注的社会现象，点明公园数量增长反映了这一趋势。</p>
+                            </div>
+                            <div class="outline-section">
+                                <h4>主体段</h4>
+                                <p>1. 描述图片中公园环境和锻炼的人们，体现居民对健康的重视。</p>
+                                <p>2. 分析2020-2022年公园数量增长数据，说明政府对民众健康的支持。</p>
+                            </div>
+                            <div class="outline-section">
+                                <h4>结尾段</h4>
+                                <p>总结公园数量增长带来的积极影响：提升居民健康水平，增强社区凝聚力。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 中间写作区 -->
+                    <div class="writing-column">
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h4>开头段</h4>
+                                <div class="word-count">0字</div>
+                            </div>
+                            <div class="editor-wrapper">
+                                <textarea class="writing-input" placeholder="请根据左侧大纲提示，开始你的写作..."></textarea>
+                                <button class="btn-optimize">AI优化</button>
+                            </div>
+                        </div>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h4>主体段</h4>
+                                <div class="word-count">0字</div>
+                            </div>
+                            <div class="editor-wrapper">
+                                <textarea class="writing-input" placeholder="请根据左侧大纲提示，开始你的写作..."></textarea>
+                                <button class="btn-optimize">AI优化</button>
+                            </div>
+                        </div>
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h4>结尾段</h4>
+                                <div class="word-count">0字</div>
+                            </div>
+                            <div class="editor-wrapper">
+                                <textarea class="writing-input" placeholder="请根据左侧大纲提示，开始你的写作..."></textarea>
+                                <button class="btn-optimize">AI优化</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧AI反馈区 -->
+                    <div class="feedback-column">
+                        <h3>AI 写作建议</h3>
+                        <div class="feedback-content">
+                            <p class="placeholder">点击"AI优化"获取写作建议...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我的笔记页面 -->
+            <div id="my-notes" class="page">
+                <div class="notes-header">
+                    <div class="notes-tabs">
+                        <div class="notes-tab active" data-tab="selected-sentences">精选语句</div>
+                        <div class="notes-tab" data-tab="my-essays">我的作文</div>
+                    </div>
+                </div>
+                
+                <!-- 精选语句内容 -->
+                <div id="selected-sentences" class="notes-content active">
+                    <table class="sentences-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>精选语句</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 这里会通过JavaScript动态添加内容 -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 我的作文内容 -->
+                <div id="my-essays" class="notes-content">
+                    <table class="essays-table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>作文标题</th>
+                                <th>创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 这里会通过JavaScript动态添加内容 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html> 

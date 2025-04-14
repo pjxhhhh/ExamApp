@@ -1,0 +1,380 @@
+/* ====== 全局变量定义 ====== */
+:root {
+    /* 主题配色方案 */
+    --primary: #0066CC;    /* 主色调：科技蓝 */
+    --gray-1: #1D1D1F;    /* 主要文字颜色 */
+    --gray-2: #86868B;    /* 次要文字颜色 */
+    --gray-3: #6E6E73;    /* 辅助文字颜色 */
+    --white: #FFFFFF;      /* 纯白背景 */
+    --gray-bg: #F5F5F7;   /* 浅灰背景 */
+    --border: #D2D2D7;    /* 边框颜色 */
+    
+    /* 统一间距系统 */
+    --space-xs: 0.2rem;    /* 超小间距：3.2px */
+    --space-sm: 0.35rem;   /* 小间距：5.6px */
+    --space-md: 0.5rem;    /* 中等间距：8px */
+    --space-lg: 0.75rem;   /* 大间距：12px */
+    --space-xl: 1rem;      /* 超大间距：16px */
+    
+    /* 字体大小层级 */
+    --text-xs: 0.75rem;    /* 12px：辅助文字 */
+    --text-sm: 0.875rem;   /* 14px：次要文字 */
+    --text-base: 1rem;     /* 16px：正文文字 */
+    --text-lg: 1.25rem;    /* 20px：小标题 */
+    --text-xl: 1.5rem;     /* 24px：副标题 */
+    --text-2xl: 2rem;      /* 32px：主标题 */
+    --text-3xl: 2.5rem;    /* 40px：大标题 */
+    --text-4xl: 3.5rem;    /* 56px：超大标题 */
+}
+
+/* ====== 基础样式设置 ====== */
+body {
+    margin: 0;
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--gray-1);
+    line-height: 1.47;
+    -webkit-font-smoothing: antialiased;  /* 字体平滑渲染 */
+}
+
+/* ====== 页面布局容器 ====== */
+.home-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+/* ====== 顶部导航栏样式 ====== */
+.home-header {
+    position: fixed;           /* 固定定位 */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);  /* 半透明背景 */
+    backdrop-filter: saturate(180%) blur(20px);  /* 毛玻璃效果 */
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-md);
+    z-index: 100;
+}
+
+/* Logo样式 */
+.logo {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--gray-1);
+    text-decoration: none;
+}
+
+/* 导航菜单 */
+.main-nav {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+/* 导航链接 */
+.nav-link {
+    color: var(--gray-1);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+/* ====== 主横幅区域样式 ====== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    padding: calc(40px + var(--space-lg)) 0 var(--space-lg);  /* 顶部预留导航栏高度 */
+    margin-bottom: var(--space-lg);
+}
+
+/* 主横幅内容区 */
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+/* 主标题 */
+.hero-title {
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;  /* 字间距微调 */
+}
+
+/* 副标题 */
+.hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--gray-2);
+    margin-bottom: var(--space-md);
+}
+
+/* 主横幅图片区 */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 90%;
+    height: auto;
+    /* border-radius: 12px; */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* 增强阴影，增加立体感 */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* 添加白色半透明边框 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+    position: relative; /* 为光泽效果做准备 */
+}
+
+.hero-image img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), transparent);
+    border-radius: 12px;
+    pointer-events: none; /* 确保不影响鼠标事件 */
+}
+
+.hero-image img:hover {
+    /* transform: translateY(-8px); 悬浮时上移，增加动态效果 */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4); /* 悬浮时加深阴影 */
+}
+
+/* ====== 反馈表单区域 ====== */
+.feedback-form {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);  /* 毛玻璃效果 */
+    border: 1px solid rgba(210, 210, 215, 0.3);
+    border-radius: 16px;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* 轻微阴影 */
+    transition: all 0.3s ease;
+    position: relative;  /* 作为按钮定位的参考 */
+}
+
+/* 表单悬浮效果 */
+.feedback-form:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* 输入框样式 */
+.feedback-input {
+    width: 100%;
+    /* padding: var(--space-md) var(--space-md) calc(var(--space-xl) * 2) var(--space-md); */
+    border: 0cap solid var(--border);
+    background: var(--white);
+    font-size: var(--text-base);
+    min-height: 30px;
+    resize: none;  /* 禁止调整大小 */
+    transition: all 0.3s ease;
+}
+
+/* 输入框焦点状态 */
+.feedback-input:focus {
+    outline: none;
+    /* border-color: var(--primary); */
+    /* box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);  焦点光晕效果 */
+}
+
+/* 提交按钮 */
+.btn-submit {
+    position: absolute;  /* 相对于表单定位 */
+    right: calc(var(--space-lg) + var(--space-sm));
+    bottom: calc(var(--space-lg) + var(--space-sm));
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 按钮悬浮效果 */
+.btn-submit:hover {
+    background-color: #71a4f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+/* 按钮点击效果 */
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ====== 快速入口区域 ====== */
+.quick-access {
+    padding: var(--space-sm) 0;    /* 上下内边距从lg(12px)改为sm(5.6px) */
+    background: var(--gray-bg);
+}
+
+/* 区域标题 */
+.section-title {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--space-lg);  /* 恢复底部间距 */
+    color: var(--primary);  /* 使用主题色 */
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 添加标题装饰线 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* 卡片网格布局 */
+.access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+/* 功能卡片 */
+.access-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: var(--space-md);
+    text-align: center;
+    text-decoration: none;
+    color: var(--gray-1);
+    transition: 0.3s ease;
+}
+
+/* 卡片悬浮效果 */
+.access-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 卡片图标 */
+.access-icon {
+    font-size: var(--text-3xl);
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
+}
+
+/* 卡片标题 */
+.access-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xs);
+}
+
+/* 卡片描述 */
+.access-card p {
+    color: var(--gray-2);
+    font-size: var(--text-base);
+}
+
+/* ====== 页脚区域 ====== */
+.home-footer {
+    background: var(--gray-bg);
+    padding: var(--space-lg) 0;
+    margin-top: var(--space-lg);
+    border-top: 1px solid var(--border);
+}
+
+/* 页脚内容网格 */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+/* 页脚栏目标题 */
+.footer-section h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+/* 页脚文本 */
+.footer-section p {
+    color: var(--gray-2);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xs);
+}
+
+/* 页脚底部版权区 */
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    color: var(--gray-3);
+    font-size: var(--text-xs);
+}
+
+/* ====== 响应式布局适配 ====== */
+@media (max-width: 768px) {
+    /* 移动端主横幅调整 */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: calc(40px + var(--space-md)) var(--space-sm);
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: var(--text-2xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-lg);
+    }
+
+    /* 移动端隐藏导航菜单 */
+    .main-nav {
+        display: none;
+    }
+
+    /* 移动端卡片布局调整 */
+    .access-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    /* 移动端页脚布局调整 */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
